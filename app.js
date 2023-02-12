@@ -61,3 +61,23 @@ app.get("/api/photos", async (req, res) => {
     }
   });
 
+  app.get("/api/photos/user/:username", async (req, res) => {
+    console.log("Get PHOTO with username", req.params.username)
+    try {
+        const photos = await unsplash.users.getPhotos({username: req.params.username,page: 1,
+            perPage: 10,
+            orderBy: 'latest',});        
+          console.log(photos)
+          res.status(200).json({
+            success:true,
+            photos: photos,
+          })
+    } catch (error) {
+        console.log("Error:", error.message)
+        res.status(500).json({
+            success:false,
+            message: "Server error. Please try again later."
+        })
+    }
+  });
+
