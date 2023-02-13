@@ -9,7 +9,7 @@ const unsplash = createApi({
   });
 
 
-router.get("/api/photos", async (req, res) => {
+router.get("/", async (req, res) => {
     console.log("Get PHOTOS function")
     try {
         const photos = await unsplash.photos.getRandom({
@@ -29,7 +29,7 @@ router.get("/api/photos", async (req, res) => {
     }
   });
 
-  router.get("/api/photos/:id", async (req, res) => {
+  router.get("/:id", async (req, res) => {
     console.log("Get PHOTO with ID function", req.params.id)
     try {
         const photos = await unsplash.photos.get({photoId: req.params.id});        
@@ -47,7 +47,7 @@ router.get("/api/photos", async (req, res) => {
     }
   });
 
-  router.get("/api/photos/user/:username", async (req, res) => {
+  router.get("/user/:username", async (req, res) => {
     console.log("Get PHOTO with username", req.params.username)
     try {
         const photos = await unsplash.users.getPhotos({username: req.params.username,page: 1,

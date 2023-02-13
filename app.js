@@ -1,17 +1,27 @@
 require("dotenv").config();
 const express = require('express')
+const connectDB = require("./config/db")
 const PhotoRoutes = require("./routes/photoRoutes")
+const UserRoutes = require("./routes/userRoutes")
 
 
 const app = express()
 
 app.use(express.json());
 
+app.use(express.urlencoded({
+    extended:true
+}))
+
+// app.use(cors())
+// app.use(cookieParser())
 
 
-app.listen(3000, (err) => {
+connectDB();
+
+app.listen(process.env.PORT, (err) => {
     if (err) console.log("Error in server setup")
-    console.log(`App listening on port 3000`)
+    console.log(`App listening on port ${process.env.PORT}`)
   })
 
   app.get("/", (req, res) => {
@@ -20,4 +30,5 @@ app.listen(3000, (err) => {
   });
     
 
-  app.use("/", PhotoRoutes);
+  app.use("/api/photos", PhotoRoutes);
+  app.use("/api/user", UserRoutes);
