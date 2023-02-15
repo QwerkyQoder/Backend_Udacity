@@ -1,9 +1,10 @@
 require("dotenv").config();
 const express = require('express')
-const connectDB = require("./config/db")
+const connectDB = require("./config/db");
+const favoritePhotoModel = require("./models/favoritePhotoModel");
 const PhotoRoutes = require("./routes/photoRoutes")
 const UserRoutes = require("./routes/userRoutes")
-
+const favoritesRoutes = require("./routes/favoritesRoutes")
 
 const app = express()
 
@@ -32,3 +33,4 @@ app.listen(process.env.PORT, (err) => {
 
   app.use("/api/photos", PhotoRoutes);
   app.use("/api/user", UserRoutes);
+  app.use("/api/user/fav/", favoritesRoutes)

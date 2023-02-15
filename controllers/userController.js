@@ -1,11 +1,11 @@
 //Import asyncHandler so that we can use it in our routes to trigger error handling middleware
 const User = require('../models/userModel')
 const CustomError = require('../CustomError')
-const asyncHandler = require("express-async-handler");
+const asyncHandler = require("../middleware/errorMiddleware");
 
 
 const cookieOptions = {
-    expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+    // expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
     httpOnly: true,
     //could be in a separate file in utils
 }
