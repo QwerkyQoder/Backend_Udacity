@@ -48,9 +48,9 @@ userSchema.methods = {
                 role: this.role
             },
             process.env.JWT_SECRET,
-            {
-                expiresIn: process.env.JWT_EXPIRY
-            }
+            // {
+            //     expiresIn: process.env.JWT_EXPIRY
+            // }
         )
     },
 

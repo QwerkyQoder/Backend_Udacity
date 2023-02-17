@@ -3,6 +3,7 @@ const asyncHandler = require("../middleware/errorMiddleware");
 const favPhotoModel = require('../models/favoritePhotoModel')
 const CustomError = require('../CustomError')
 const isLoggedIn = require('../middleware/authMiddleware')
+const mongoose = require("mongoose")
 
 const addFav = asyncHandler(async (req, res, next) => {
     const {url, description, username } = req.body
@@ -43,6 +44,16 @@ const editFav = asyncHandler(async (req, res) => {
 })
 
 const getFav = asyncHandler(async (req, res) => {
+    console.log("GETFAV", req.user._id)
+    const allfavs = await favPhotoModel.find ({userid: req.user._id})
+    console.log(allfavs)
+    if(!allfavs) {
+        throw new CustomError('Favorites not found', 400)  
+    }
+    res.status(200).json({
+        success: true,
+        allfavs,
+    })
 
 })
 
