@@ -36,7 +36,16 @@ const addFav = asyncHandler(async (req, res, next) => {
 })
 
 const removeFav = asyncHandler(async (req, res) => {
-
+    console.log("REMOVEFAV", req.user._id)
+    const allfavs = await favPhotoModel.find ({userid: req.user._id}).remove()
+    console.log(allfavs)
+    if(!allfavs) {
+        throw new CustomError('Favorites not found', 400)  
+    }
+    res.status(200).json({
+        success: true,
+        allfavs,
+    })
 })
 
 const editFav = asyncHandler(async (req, res) => {
