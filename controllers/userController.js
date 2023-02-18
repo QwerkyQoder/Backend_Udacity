@@ -10,6 +10,7 @@ const cookieOptions = {
     //could be in a separate file in utils
 }
 
+const tokenList = [];
 
 /******************************************************
  * @SIGNUP
@@ -41,6 +42,9 @@ const signUp = asyncHandler(async (req, res) => {
     const token = user.getJwtToken()
     console.log(user);
     user.password = undefined
+
+    tokenList.push(token)
+    console.log(tokenList)
 
     res.cookie("token", token, cookieOptions)
 
@@ -78,6 +82,14 @@ const login = asyncHandler(async (req, res) => {
     if (isPasswordMatched) {
         const token = user.getJwtToken()
         user.password = undefined;
+
+        if(tokenList.includes(token)) {
+            throw new CustomError('ALready logged in', 201)
+        }
+        tokenList.push(token)
+        console.log(tokenList)
+
+
         res.cookie("token", token, cookieOptions)
         return res.status(200).json({
             success: true,
@@ -98,8 +110,19 @@ const login = asyncHandler(async (req, res) => {
  * @parameters  
  * @returns success message
  ******************************************************/
-const logout = asyncHandler(async (_req, res) => {
+const logout = asyncHandler(async (req, res) => {
     // res.clearCookie()
+    token = req.headers.authorization.split(" ")[1]
+
+    const index = tokenList.indexOf(token)
+    if(index !== -1) {
+        tokenList.splice(index, 1);
+    }
+    console.log(tokenList)
+
+    res.clearCookie('jwt_token');
+    // req.session.destroy(); 
+
     res.cookie("token", null, {
         expires: new Date(Date.now()),
         httpOnly: true
@@ -110,4 +133,4 @@ const logout = asyncHandler(async (_req, res) => {
     })
 })
 
-module.exports = {cookieOptions, signUp, login, logout}
+module.exports = {cookieOptions, signUp, login, logout, tokenList}

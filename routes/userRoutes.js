@@ -9,9 +9,5 @@ const User = require("../models/userModel")
 router.post("/register", signUp)
 router.get("/login", login)
 router.put("/logout", logout)
-// router.delete("/me", getUser)
-
-
-
 
 module.exports = router;

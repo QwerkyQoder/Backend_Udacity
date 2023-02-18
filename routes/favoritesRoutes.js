@@ -6,8 +6,8 @@ const router = express.Router();
 const isLoggedIn = require("../middleware/authMiddleware")
 
 router.post("/add",isLoggedIn, addFav);
-router.put("/edit",isLoggedIn, editFav);
+router.put("/edit/:id",isLoggedIn, editFav);
 router.get("/get", isLoggedIn, getFav);
-router.delete("/remove", isLoggedIn, removeFav);
+router.delete("/remove/:id", isLoggedIn, removeFav);
 
 module.exports = router;
