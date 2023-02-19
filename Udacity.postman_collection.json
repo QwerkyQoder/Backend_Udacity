@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "25a0f89b-431a-4859-a68a-6856d0656c0e",
+		"name": "Udacity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21925655"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/photos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/photos/iHGga-T258k",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/photos/iHGga-T258k",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"photos",
+						"iHGga-T258k"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/photos/user/gibbivision",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/photos/user/gibbivision",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"photos",
+						"user",
+						"gibbivision"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/user/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"iueyjqebr\",\r\n    \"email\": \"kj8h435@oopk.com\",\r\n    \"password\": \"gu76ege3e24\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/user/login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"kj8h435@oopk.com\",\r\n    \"password\": \"gu76ege3e24\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/user/logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2YwYmEyZDBiZTY4OTEzYmUwMWExYjYiLCJpYXQiOjE2NzY3MjEwMDZ9.s6O_Z1PTtsbN16hLqXdB9TnfXTfu0K9Juilfd54xE_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/user/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/user/fav/add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2YwYmEyZDBiZTY4OTEzYmUwMWExYjYiLCJpYXQiOjE2NzY3MjEwMDZ9.s6O_Z1PTtsbN16hLqXdB9TnfXTfu0K9Juilfd54xE_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\":\"https://images.unsplash.com/photo-1674066636011-d445199acada?ixid=Mnw0MDg4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY0NTM2Njc&ixlib=rb-4.0.3\",\r\n    \"description\":\"the top view of a tree with green leaves\",\r\n    \"username\":\"gibbivision\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/user/fav/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"fav",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/user/fav/get",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2YwYmEyZDBiZTY4OTEzYmUwMWExYjYiLCJpYXQiOjE2NzY3MjEwMDZ9.s6O_Z1PTtsbN16hLqXdB9TnfXTfu0K9Juilfd54xE_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/user/fav/get",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"fav",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/user/fav/edit/63ef77e09b6aaecd89a6b554",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2YwYmEyZDBiZTY4OTEzYmUwMWExYjYiLCJpYXQiOjE2NzY3MjEwMDZ9.s6O_Z1PTtsbN16hLqXdB9TnfXTfu0K9Juilfd54xE_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\":\"https://images.unsplash.com/photo-1674066636011-d445199acada?ixid=Mnw0MDg4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY0NTM2Njc&ixlib=rb-4.0.3\",\r\n    \"description\":\"the top view of a tree with green leaves changed\",\r\n    \"username\":\"gibbivision\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/user/fav/edit/63f0bb83a5af7d9d05c8dad8",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"fav",
+						"edit",
+						"63f0bb83a5af7d9d05c8dad8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/user/fav/remove/63ef77e09b6aaecd89a6b554",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2YwYmEyZDBiZTY4OTEzYmUwMWExYjYiLCJpYXQiOjE2NzY3MjEwMDZ9.s6O_Z1PTtsbN16hLqXdB9TnfXTfu0K9Juilfd54xE_c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/user/fav/remove/63f0bb83a5af7d9d05c8dad8",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"fav",
+						"remove",
+						"63f0bb83a5af7d9d05c8dad8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
