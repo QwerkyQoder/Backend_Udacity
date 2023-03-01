@@ -13,16 +13,16 @@ const cookieOptions = {
 const tokenList = [];
 
 /******************************************************
- * @SIGNUP
- * @route http://localhost:5000/api/auth/signup
- * @description User signUp Controller for creating new user
+ * @REGISTER
+ * @route http://localhost:3000/api/user/register
+ * @description User Register Controller for creating new user
  * @parameters name, email, password
  * @returns User Object
  ******************************************************/
-const signUp = asyncHandler(async (req, res) => {
+const register = asyncHandler(async (req, res) => {
     const {username, email, password } = req.body
 
-    console.log("SIGNUP", req.body)
+    console.log("REGISTER", req.body)
 
     if (!username || !email || !password) {
         throw new CustomError('Please fill all fields', 400)
@@ -58,8 +58,8 @@ const signUp = asyncHandler(async (req, res) => {
 
 /******************************************************
  * @LOGIN
- * @route http://localhost:5000/api/auth/login
- * @description User signIn Controller for loging new user
+ * @route http://localhost:3000/api/user/login
+ * @description User Login Controller for loging new user
  * @parameters  email, password
  * @returns User Object
  ******************************************************/
@@ -105,7 +105,7 @@ const login = asyncHandler(async (req, res) => {
 
 /******************************************************
  * @LOGOUT
- * @route http://localhost:5000/api/auth/logout
+ * @route http://localhost:3000/api/user/logout
  * @description User logout bby clearing user cookies
  * @parameters  
  * @returns success message
@@ -133,4 +133,4 @@ const logout = asyncHandler(async (req, res) => {
     })
 })
 
-module.exports = {cookieOptions, signUp, login, logout, tokenList}
+module.exports = {cookieOptions, register, login, logout, tokenList}
