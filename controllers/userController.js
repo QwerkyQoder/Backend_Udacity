@@ -103,34 +103,34 @@ const login = asyncHandler(async (req, res) => {
 })
 
 
-/******************************************************
- * @LOGOUT
- * @route http://localhost:3000/api/user/logout
- * @description User logout bby clearing user cookies
- * @parameters  
- * @returns success message
- ******************************************************/
-const logout = asyncHandler(async (req, res) => {
-    // res.clearCookie()
-    token = req.headers.authorization.split(" ")[1]
+// /******************************************************
+//  * @LOGOUT
+//  * @route http://localhost:3000/api/user/logout
+//  * @description User logout bby clearing user cookies
+//  * @parameters  
+//  * @returns success message
+//  ******************************************************/
+// const logout = asyncHandler(async (req, res) => {
+//     // res.clearCookie()
+//     token = req.headers.authorization.split(" ")[1]
 
-    const index = tokenList.indexOf(token)
-    if(index !== -1) {
-        tokenList.splice(index, 1);
-    }
-    console.log(tokenList)
+//     const index = tokenList.indexOf(token)
+//     if(index !== -1) {
+//         tokenList.splice(index, 1);
+//     }
+//     console.log(tokenList)
 
-    res.clearCookie('jwt_token');
-    // req.session.destroy(); 
+//     res.clearCookie('jwt_token');
+//     // req.session.destroy(); 
 
-    res.cookie("token", null, {
-        expires: new Date(Date.now()),
-        httpOnly: true
-    })
-    res.status(200).json({
-        success: true,
-        message: "Logged Out"
-    })
-})
+//     res.cookie("token", null, {
+//         expires: new Date(Date.now()),
+//         httpOnly: true
+//     })
+//     res.status(200).json({
+//         success: true,
+//         message: "Logged Out"
+//     })
+// })
 
-module.exports = {cookieOptions, register, login, logout, tokenList}
+module.exports = {cookieOptions, register, login, tokenList}
