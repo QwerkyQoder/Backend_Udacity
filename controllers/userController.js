@@ -65,6 +65,7 @@ const register = asyncHandler(async (req, res) => {
  ******************************************************/
 
 const login = asyncHandler(async (req, res) => {
+    console.log("LOGIN")
     const { email, password } = req.body
 
     if ( !email || !password) {

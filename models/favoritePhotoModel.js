@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 
+
 const favPhotoSchema = mongoose.Schema({
     // User registered ID
     userid: {
@@ -18,6 +19,9 @@ const favPhotoSchema = mongoose.Schema({
         type: String,
         required: [true, "Username is required"],
         maxLength: [50, "Username must be less than 50"]
+    },
+    explanation: {
+        type: String,
     },
 });
 

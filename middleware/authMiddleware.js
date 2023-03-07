@@ -23,6 +23,7 @@ const isLoggedIn = asyncHandler(async(req, _res, next) => {
 
         if(tokenList.indexOf(token) > -1)
         {
+            req.token = token;
             next()
         }
         else
@@ -35,5 +36,6 @@ const isLoggedIn = asyncHandler(async(req, _res, next) => {
     }
     
 })
+
 
 module.exports = isLoggedIn;
