@@ -20,7 +20,12 @@ const getPhotos = asyncHandler (async (req, res) => {
         const resp = await axios.get(randomURL).then( data => {
           // the url of the random img
           console.log(data.data.length);
-          photos = data.data
+          photos = data.data.map((x) => {return {id: x.id,
+            url: x.urls.raw,
+            description: x.alt_description,
+            username: x.user.username
+          }
+        })
         });
 
           res.status(200).json({
@@ -45,15 +50,21 @@ const getPhotos = asyncHandler (async (req, res) => {
  ******************************************************/
 const getPhotoWithId = asyncHandler (async (req, res) => {
     console.log("Get PHOTO with ID function", req.params.id)
-    let photos;
+    let photoObj;
     try {
         let randomURL = `https://api.unsplash.com/photos/${req.params.id}?client_id=${process.env.UNSPLASH_ACCESS_KEY}`
         const resp = await axios.get(randomURL).then( data => {
-          photos = data.data
+          let photos = data.data
+          photoObj = {id: photos.id,
+            url: photos.urls.raw,
+            description: photos.alt_description,
+            username: photos.user.username
+          } 
+  
         });
           res.status(200).json({
             success:true,
-            photos: photos,
+            photos: photoObj,
           })
     } catch (error) {
         console.log("Error:", error.message)
@@ -80,7 +91,13 @@ const getPhotoWithUsername = asyncHandler ( async (req, res) => {
 
         const resp = await axios.get(randomURL).then( data => {
           // the url of the random img
-          photos = data.data.photos
+          // photos = data.data.photos
+          photos = data.data.photos.map((x) => {return {id: x.id,
+            url: x.urls.raw,
+            description: x.alt_description,
+            username: req.params.username
+          }
+        })
         })
 
           res.status(200).json({
@@ -88,6 +105,7 @@ const getPhotoWithUsername = asyncHandler ( async (req, res) => {
             photos: photos,
           })
     } catch (error) {
+      console.log(error)
         res.status(500).json({
             success:false,
             message: "Server error. Please try again later."
