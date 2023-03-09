@@ -48,7 +48,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/photos/iHGga-T258k",
+					"raw": "http://localhost:3000/api/photos/T5vRS7zDrf4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -57,7 +57,7 @@
 					"path": [
 						"api",
 						"photos",
-						"iHGga-T258k"
+						"T5vRS7zDrf4"
 					]
 				}
 			},
@@ -92,7 +92,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"iueyjqebr\",\r\n    \"email\": \"kj8h435@oopk.com\",\r\n    \"password\": \"gu76ege3e24\"\r\n}",
+					"raw": "{\r\n    \"username\": \"iueyjqebr\",\r\n    \"email\": \"kj8h436@oopk.com\",\r\n    \"password\": \"gu76ege3e24\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -116,15 +116,12 @@
 		},
 		{
 			"name": "localhost:3000/api/user/login",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"kj8h435@oopk.com\",\r\n    \"password\": \"gu76ege3e24\"\r\n}",
+					"raw": "{\r\n    \"email\": \"kj8h436@oopk.com\",\r\n    \"password\": \"gu76ege3e24\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -147,36 +144,6 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/api/user/logout",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2YwYmEyZDBiZTY4OTEzYmUwMWExYjYiLCJpYXQiOjE2NzY3MjEwMDZ9.s6O_Z1PTtsbN16hLqXdB9TnfXTfu0K9Juilfd54xE_c",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "localhost:3000/api/user/logout",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"user",
-						"logout"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "localhost:3000/api/user/fav/add",
 			"request": {
 				"auth": {
@@ -184,7 +151,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2YwYmEyZDBiZTY4OTEzYmUwMWExYjYiLCJpYXQiOjE2NzY3MjEwMDZ9.s6O_Z1PTtsbN16hLqXdB9TnfXTfu0K9Juilfd54xE_c",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA3MWQ5ZGQ1NzVmOTk3ZTI0NzU3ZTciLCJpYXQiOjE2NzgxOTA4NjZ9.aPAsoSvbxzKb0Z6MStgwpP3W8uA7ebgS445Wsp6moHA",
 							"type": "string"
 						}
 					]
@@ -193,7 +160,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"url\":\"https://images.unsplash.com/photo-1674066636011-d445199acada?ixid=Mnw0MDg4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY0NTM2Njc&ixlib=rb-4.0.3\",\r\n    \"description\":\"the top view of a tree with green leaves\",\r\n    \"username\":\"gibbivision\"\r\n}",
+					"raw": "{\r\n    \"url\":\"https://images.unsplash.com/photo-1674066636011-d445199acada?ixid=Mnw0MDg4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY0NTM2Njc&ixlib=rb-4.0.3\",\r\n    \"description\":\"the top view of a tree with green leaves\",\r\n    \"username\":\"gibbivision\",\r\n    \"explanation\": \"Favorite painting\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -224,7 +191,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2YwYmEyZDBiZTY4OTEzYmUwMWExYjYiLCJpYXQiOjE2NzY3MjEwMDZ9.s6O_Z1PTtsbN16hLqXdB9TnfXTfu0K9Juilfd54xE_c",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2ZmNjU1YTZkYzJlZDk4MDZmNDljMjkiLCJpYXQiOjE2Nzc2ODIwMjV9.L4P8sf7J2B9uoydX-mYQefKoBet60wjxGvXizXXDpYk",
 							"type": "string"
 						}
 					]
@@ -255,7 +222,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2YwYmEyZDBiZTY4OTEzYmUwMWExYjYiLCJpYXQiOjE2NzY3MjEwMDZ9.s6O_Z1PTtsbN16hLqXdB9TnfXTfu0K9Juilfd54xE_c",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDA3MWQ5ZGQ1NzVmOTk3ZTI0NzU3ZTciLCJpYXQiOjE2NzgxOTA5NjV9._hqB2fmvn668QjNyC6XV7QEsQ5bqFaZt2KtDL50WhzI",
 							"type": "string"
 						}
 					]
@@ -264,7 +231,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"url\":\"https://images.unsplash.com/photo-1674066636011-d445199acada?ixid=Mnw0MDg4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY0NTM2Njc&ixlib=rb-4.0.3\",\r\n    \"description\":\"the top view of a tree with green leaves changed\",\r\n    \"username\":\"gibbivision\"\r\n}",
+					"raw": "{\r\n    \"url\":\"https://images.unsplash.com/photo-1674066636011-d445199acada?ixid=Mnw0MDg4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY0NTM2Njc&ixlib=rb-4.0.3\",\r\n    \"description\":\"the top view of a tree with green leaves changed\",\r\n    \"username\":\"gibbivision\",\r\n    \"explanation\": \"My new explanation\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -272,7 +239,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/user/fav/edit/63f0bb83a5af7d9d05c8dad8",
+					"raw": "localhost:3000/api/user/fav/edit/640729286460dbd9606be8d4",
 					"host": [
 						"localhost"
 					],
@@ -282,7 +249,7 @@
 						"user",
 						"fav",
 						"edit",
-						"63f0bb83a5af7d9d05c8dad8"
+						"640729286460dbd9606be8d4"
 					]
 				}
 			},
@@ -296,7 +263,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2YwYmEyZDBiZTY4OTEzYmUwMWExYjYiLCJpYXQiOjE2NzY3MjEwMDZ9.s6O_Z1PTtsbN16hLqXdB9TnfXTfu0K9Juilfd54xE_c",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2ZmNjU1YTZkYzJlZDk4MDZmNDljMjkiLCJpYXQiOjE2Nzc2ODIwMjV9.L4P8sf7J2B9uoydX-mYQefKoBet60wjxGvXizXXDpYk",
 							"type": "string"
 						}
 					]
@@ -304,7 +271,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/user/fav/remove/63f0bb83a5af7d9d05c8dad8",
+					"raw": "localhost:3000/api/user/fav/remove/63ff65946dc2ed9806f49c2f",
 					"host": [
 						"localhost"
 					],
@@ -314,7 +281,7 @@
 						"user",
 						"fav",
 						"remove",
-						"63f0bb83a5af7d9d05c8dad8"
+						"63ff65946dc2ed9806f49c2f"
 					]
 				}
 			},
