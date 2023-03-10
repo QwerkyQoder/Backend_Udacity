@@ -20,12 +20,7 @@ const getPhotos = asyncHandler (async (req, res) => {
         const resp = await axios.get(randomURL).then( data => {
           // the url of the random img
           console.log(data.data.length);
-          photos = data.data.map((x) => {return {id: x.id,
-            url: x.urls.raw,
-            description: x.alt_description,
-            username: x.user.username
-          }
-        })
+          photos = data.data.map((x) => {return x.urls.raw})
         });
 
           res.status(200).json({
